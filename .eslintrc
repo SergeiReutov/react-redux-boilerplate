@@ -1,0 +1,33 @@
+{
+  "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+  },
+   "parserOptions": {
+       "parser": "babel-eslint"
+   },
+  "extends": [
+      "airbnb-base",
+      "plugin:react/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+  "rules": {
+    "import/prefer-default-export": 0,
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "ignore"
+    }],
+    "class-methods-use-this": 0,
+    "no-underscore-dangle": 0
+  }
+}
