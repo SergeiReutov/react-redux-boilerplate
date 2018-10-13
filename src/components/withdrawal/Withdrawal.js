@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
 
 import { CashType } from 'types/withdrawal';
+import './Withdrawal.css';
 
 export default function Withdrawal(props) {
   const { cash, onWithdraw } = props;
