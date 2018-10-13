@@ -18,6 +18,7 @@ export default function withdrawal(state = initialState, action) {
         ...state,
         cash: action.cash,
         isLoading: false,
+        error: '',
       };
     case WITHDRAWAL.WITHDRAW_CASH.FAILURE:
       return {
