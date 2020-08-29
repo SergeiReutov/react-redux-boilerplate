@@ -2,4 +2,4 @@ import * as R from 'ramda';
 
 export const voidFn = () => {};
 
-export const isNot = fn => R.compose(R.not, fn);
+export const isNot = fn => R.pipe(fn, R.not);

@@ -15,7 +15,7 @@ export default function ErrorMessage(props) {
     return null;
   }
 
-  const defaultMessage = 'Cannot do that!';
+  const defaultMessage = 'Something went wrong!';
 
   return (
     <Snackbar

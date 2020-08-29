@@ -1,5 +1,4 @@
-import { shape, arrayOf, string, number } from 'prop-types';
-import { ArrayWithLengthAndType } from './utils';
+import { shape, string, number } from 'prop-types';
 
 export const PriceDataItem = shape({
   date: string.isRequired,
@@ -10,19 +9,4 @@ export const PriceDataItem = shape({
   adjClose: number.isRequired,
   volume: number.isRequired,
   symbol: string.isRequired
-});
-
-const Point = ArrayWithLengthAndType(2, Number);
-
-export const TechAnalysisLineItem = shape({
-  start: Point,
-  end: Point,
-  importance: number
-});
-
-export const ChartType = shape({
-  priceData: arrayOf(PriceDataItem),
-  techAnalysis: shape({
-    lines: arrayOf(TechAnalysisLineItem)
-  })
 });

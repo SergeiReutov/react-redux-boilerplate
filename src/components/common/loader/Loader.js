@@ -7,7 +7,8 @@ export default function Loader() {
   return (
     <Backdrop
       className="loaderContainer"
-      open>
+      open
+    >
       <CircularProgress color="inherit" />
     </Backdrop>
   );

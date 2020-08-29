@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
 
-import { default as chart } from './chart';
-import { default as tickerSearch } from './tickerSearch';
+import { default as overview } from './overview';
 
 export default combineReducers({
-  chart,
-  tickerSearch
+  overview
 });
