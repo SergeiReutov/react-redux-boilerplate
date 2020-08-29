@@ -1,33 +1,37 @@
 {
   "env": {
-      "browser": true,
-      "es6": true,
-      "node": true
+    "browser": true,
+    "es6": true,
+    "jest": true
   },
-   "parserOptions": {
-       "parser": "babel-eslint"
-   },
   "extends": [
-      "airbnb-base",
-      "plugin:react/recommended"
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended"
   ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": ["src"]
-      }
+    "react": {
+      "version": "detect"
     }
   },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
   "rules": {
-    "import/prefer-default-export": 0,
-    "comma-dangle": ["error", {
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "ignore"
-    }],
-    "class-methods-use-this": 0,
-    "no-underscore-dangle": 0
+    "quotes": ["error", "single"],
+    "max-len": ["error", { "code": 120, "comments": 150 }],
+    "semi": ["error", "always"],
+    "no-console": 1,
+    "comma-dangle": ["error", "never"]
   }
 }

@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux';
-import withdrawal from './withdrawal';
+
+import { default as chart } from './chart';
+import { default as tickerSearch } from './tickerSearch';
 
 export default combineReducers({
-  withdrawal,
+  chart,
+  tickerSearch
 });

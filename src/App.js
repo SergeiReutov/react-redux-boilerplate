@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import WithdrawalView from 'containers/WithdrawalView';
-import './App.css';
+import React from 'react';
+import { Header } from 'components/header';
+import Router from './Router';
+import 'styles/Main.scss';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <WithdrawalView />
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <div data-testid="mainApp" className="main-app">
+      <Header />
+      <Router />
+    </div>
+  );
 }
-
-export default App;

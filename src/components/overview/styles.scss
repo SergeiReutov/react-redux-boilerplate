@@ -1,0 +1,18 @@
+@import 'styles/Mixins';
+@import 'styles/Colors';
+
+main.overview {
+  display: flex;
+  align-items: stretch;
+
+  section.chartContainer {
+    flex: 0 0 75%;
+    position: relative;
+    @include flexCentered;
+  }
+
+  aside.sidePanel.right {
+    flex: 0 1 25%;
+    background-color: $gray;
+  }
+}
