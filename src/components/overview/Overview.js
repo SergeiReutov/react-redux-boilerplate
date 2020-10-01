@@ -7,10 +7,12 @@ import {
   getIsLoading,
   getError
 } from 'selectors/overview';
+import { isNotEmpty } from 'utils/common';
 import './styles.scss';
 
 export default function Overview() {
   const dispatch = useDispatch();
+  
   const name = useSelector(getName);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
@@ -20,15 +22,13 @@ export default function Overview() {
     return () => dispatch(clearState());
   }, [dispatch]);
 
-  const handleErrorClear = () => dispatch(clearError());
-
   const renderNameSection = () => (
     <section className="nameSection">
       {name}
     </section>
   );
 
-  const renderContent = () => name.length
+  const renderContent = () => isNotEmpty(name)
     ? renderNameSection()
     : <NoData />;
 
@@ -41,7 +41,7 @@ export default function Overview() {
       {error !== null && (
         <ErrorMessage
           error={error}
-          onClose={handleErrorClear}
+          onClose={clearError}
         />
       )}
     </main>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -11,11 +12,13 @@ export default function ErrorMessage(props) {
     onClose = voidFn
   } = props;
 
-  if (error === null) {
-    return null;
-  }
+  const dispatch = useDispatch();
 
   const defaultMessage = 'Something went wrong!';
+
+  const handleErrorClear = useCallback(() => {
+    dispatch(onClose());
+  }, [dispatch, onClose]);
 
   return (
     <Snackbar
@@ -28,7 +31,7 @@ export default function ErrorMessage(props) {
       onClose={onClose}
       message={error || defaultMessage}
       action={
-        <IconButton size="small" color="inherit" onClick={onClose}>
+        <IconButton size="small" color="inherit" onClick={handleErrorClear}>
           <CloseIcon fontSize="small" />
         </IconButton>
       }
